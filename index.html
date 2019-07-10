@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's on your shopping list?</title>
+    <link type="text/css" rel="stylesheet" href="./styles/styles.css">
+    <link type="text/css" rel="stylesheet" href="./styles/nv.d3.css">
+</head>
+
+<body>
+
+    <!-- SHOPPING LIST -->
+    <div class="app">
+
+        <!-- TITLE -->
+        <h1 class="title">What's on your shopping list <img src="./assets/shopping-cart.svg" alt="shopping-cart" width="40px"> ?</h1>
+        <h4 class="subTitle">Compare the prices of different grocery items from 2,052 cities worldwide.</h4>
+
+        <!-- SELECTORS & FILTERS -->
+        <div class="filters">
+            <p>What is the </p>
+            <select id="cheapOrExpensive" class="dataFilterDropDown">
+                <option value="top10">most expensive</option>
+                <option value="bottom10">cheapest</option>
+            </select>
+            <p> city in </p> 
+            <select id="chooseLocation" class="dataFilterDropDown">
+                <option value="europe">Europe</option>
+                <option value="america">America</option>
+                <option value="africa">Africa</option>
+                <option value="asia">Asia</option>
+                <option value="oceania">Oceania</option>
+                <option disabled>-------------</option>
+                <option value="the entire planet">the entire planet</option>
+            </select>
+            <p> to buy... </p> 
+        </div>
+
+        <!-- <img id="world-map" src="./assets/world-map.svg" width="500px"> -->
+
+        <!-- SHOPPING LIST ITEMS -->
+        <div class="shoppingList" id="shoppingList"></div>
+        <br>
+
+        <!-- CHART -->
+        <div class="chartArea" id="chartArea">
+            <h3 class="chartTitle" id="chartTitle"></h3>
+            <p class="chartSubTitle" id="chartSubTitle"></p>
+            <div id="chart"><svg></svg></div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+</body>
+</html>

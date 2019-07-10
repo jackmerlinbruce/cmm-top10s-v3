@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK:400,900&display=swap');
+
+.app {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 50px;
+}
+.app .title {
+    margin-bottom: 0px;
+}
+.app .subTitle {
+    margin-top: 0px;
+    opacity: 0.5;
+}
+
+/*******************/
+/* DATA FILTERS */
+/*******************/
+
+.app .filters * {
+    display: inline;
+}
+.app .dataFilterDropDown {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-size: 16px;
+    margin: 5px;
+    background-color: rgb(241, 241, 241);
+    border: none;
+}
+
+/*******************/
+/* SHOPPING LIST */
+/*******************/
+
+.app .item {
+    font-family: 'Noto Sans HK', sans-serif;
+    display: inline-block;
+    padding: 15px;
+    width: 150px;
+    border-radius: 30px 30px 30px 30px;
+    filter: grayscale(0.65);
+}
+.app .item:hover {
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0px -3px 0px inset;
+    filter: grayscale(0);
+}
+.app .item:active {
+    background-color: rgb(250, 250, 250);
+}
+.app .item.on {
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0px -0px 0px 3px inset;
+    filter: grayscale(0);
+}
+.app img {
+    vertical-align: -7px;
+}
+
+/*******************/
+/* CHART - AREA */
+/*******************/
+
+.app .chartArea {
+    text-align: left;
+    display: block;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+.app .chartArea.on {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: 400ms ease-in-out;
+}
+.app .chartTitle {
+    margin-bottom: 0px;
+}
+.app .chartSubTitle {
+    font-size: 80%;
+    margin-top: 0px;
+    opacity: 0.5;
+}
+.app #chart svg {
+    width: 100vw;
+    height: 420px;
+    transform: translate(-80px)
+}
+
+/*******************/
+/* CHART - NVD3 */
+/*******************/
+
+.app .nv-axis .tick line { display: none; } /* disappear y-axis */
+.app .nv-y text{ display: none; } /* disappear y-axis */
+.app .discreteBar { rx: 5px; } /* rounded corners */
+.app .nv-bar.positive text { opacity: 0.5; } /* value labels */
+.app .tick.zero text { font-size: 10px; } /* x-labels */
+
+/*******************/
+/* ON MOBILE */
+/*******************/
+
+@media only screen and (max-width: 480px) {
+    .app { margin: 20px; }
+    .app .item { font-size: 80%; width: 100px; }
+    .app img { transform: scale(0.8) }
+    .app .chartArea.on { 
+        width: 100%;
+        visibility: visible;
+        border-radius: 0px 30px 30px 30px ;
+        opacity: 1;
+        transition: 400ms ease-in-out;
+    }
+    .app #chart svg { height: 300px; width: 110vw; }
+}
